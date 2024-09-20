@@ -1,37 +1,43 @@
 package main
 
-/*
+import (
+	"net/http"
+	"net/http/httptest"
+	"testing"
+)
 
 func TestRootHandler(t *testing.T) {
-    //ARRANGE
+	//ARRANGE
 	// Create a new HTTP request
-    req, err := http.NewRequest("GET", "/", nil)
-    if err != nil {
-        t.Fatal(err)
-    }
+	req, err := http.NewRequest("GET", "/", nil)
+	if err != nil {
+		t.Fatal(err)
+	}
 
-    // Create a new response recorder
-    rr := httptest.NewRecorder()
+	// Create a new response recorder
+	rr := httptest.NewRecorder()
 
-    // Create a handler
-    handler := http.HandlerFunc(rootHandler)
+	// Create a handler
+	handler := http.HandlerFunc(rootHandler)
 
 	//ACT
-    // Serve the request
-    handler.ServeHTTP(rr, req)
+	// Serve the request
+	handler.ServeHTTP(rr, req)
 
 	//ASSERT
-    // Check the status code
-    if status := rr.Code; status != http.StatusOK {
-        t.Errorf("handler returned wrong status code: got %v want %v", status, http.StatusOK)
-    }
+	// Check the status code
+	if status := rr.Code; status != http.StatusOK {
+		t.Errorf("handler returned wrong status code: got %v want %v", status, http.StatusOK)
+	}
 
-    // Check the response body
-    expected := "Hello, World!"
-    if rr.Body.String() != expected {
-        t.Errorf("handler returned unexpected body: got %v want %v", rr.Body.String(), expected)
-    }
+	// Check the response body
+	expected := "Hello, World!"
+	if rr.Body.String() != expected {
+		t.Errorf("handler returned unexpected body: got %v want %v", rr.Body.String(), expected)
+	}
 }
+
+/*
 
 func TestGetUsersHandler(t *testing.T) {
     // ARRANGE
