@@ -1,7 +1,7 @@
 package config
 
 import (
-	"log"
+	"fmt"
 	"os"
 
 	"github.com/joho/godotenv"
@@ -17,7 +17,7 @@ type DatabaseConfig struct {
 }
 
 func LoadDatabaseConfig(filename ...string) DatabaseConfig {
-	
+
 	// Default to ".env" if no filename is provided
 	envFile := ".env"
 	if len(filename) > 0 {
@@ -27,7 +27,7 @@ func LoadDatabaseConfig(filename ...string) DatabaseConfig {
 	// Load the specified .env file
 	err := godotenv.Load(envFile)
 	if err != nil {
-		log.Fatalf("Error loading %s file", envFile)
+		fmt.Println("Error loading %s file", envFile)
 	}
 
 	return DatabaseConfig{
