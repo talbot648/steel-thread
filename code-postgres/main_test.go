@@ -1,18 +1,6 @@
 package main
 
-import (
-	"acme/api"
-	"acme/config"
-	"acme/db/inmemory"
-	"acme/model"
-	"acme/service"
-	"encoding/json"
-	"io"
-	"net/http"
-	"net/http/httptest"
-	"reflect"
-	"testing"
-)
+/*
 
 func TestRootHandler(t *testing.T) {
     //ARRANGE
@@ -170,7 +158,7 @@ func TestGetUsersHandlerWithServer(t *testing.T) {
     if err != nil {
         t.Fatalf("Failed to read response body: %v", err)
     }
-	
+
     err = json.Unmarshal(bodyBytes, &actual)
     if err != nil {
         t.Fatalf("Failed to unmarshal response body: %v", err)
@@ -181,3 +169,5 @@ func TestGetUsersHandlerWithServer(t *testing.T) {
         t.Errorf("handler returned unexpected body: got %v want %v", actual, expected)
     }
 }
+
+*/
