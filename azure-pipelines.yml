@@ -8,7 +8,7 @@ variables:
 - name: dockerRegistryServiceConnection 
   value: 'Docker ACR'
 - name:  imageRepository
-  value: 'atari/charlie-talbot-example-app'
+  value: 'atari/charles-talbot-example-app'
 - name: containerRegistry
   value: 'acrbjssacademy.azurecr.io'
 - name: dockerfilePath
@@ -18,7 +18,7 @@ variables:
 - name: azureSubscription
   value: 'Azure RM'
 - name: appName
-  value: 'example-app'
+  value: 'app-charlestalbot'
 
 trigger:
 - main
